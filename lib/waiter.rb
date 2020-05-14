@@ -12,4 +12,9 @@ class Waiter
   def self.all
     @@all
   end
+  def meals
+    Meal.all.select do |meal|
+      meal.waiter == self #checking for waiter now
+    end
+  end
 end
